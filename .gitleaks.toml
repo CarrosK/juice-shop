@@ -10,10 +10,11 @@ description = "Intentional secrets: challenge data, test fixtures and sample inf
 paths = [
   '''^data/static/users\.yml$''',
   '''^lib/insecurity\.ts$''',
-  '''^routes/login\.ts$''',
+  '''^routes/login\.(js|ts)$''',
   '''^frontend/src/app/faucet/faucet\.component\.ts$''',
   '''^frontend/src/app/.*\.spec\.ts$''',
-  '''^test/.*\.ts$''',
+  '''^test/.*\.(js|ts)$''',
+  '''^cypress/.*\.ts$''',
   '''^(infrastructure/)?terraform/networking\.tf$''',
 ]
 
