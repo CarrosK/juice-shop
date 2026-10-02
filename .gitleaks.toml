@@ -1,0 +1,25 @@
+title = "OWASP Juice Shop gitleaks config"
+
+# Juice Shop is an intentionally vulnerable application: its hard-coded keys,
+# JWTs and TOTP secrets are challenge material, not real leaks.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Intentional secrets: challenge data, test fixtures and sample infrastructure"
+paths = [
+  '''^data/static/users\.yml$''',
+  '''^lib/insecurity\.ts$''',
+  '''^routes/login\.ts$''',
+  '''^frontend/src/app/faucet/faucet\.component\.ts$''',
+  '''^frontend/src/app/.*\.spec\.ts$''',
+  '''^test/.*\.ts$''',
+  '''^(infrastructure/)?terraform/networking\.tf$''',
+]
+
+[[allowlists]]
+description = "Local scan reports and the training labs folder"
+paths = [
+  '''^gitleaks-rapport\.json$''',
+  '''^formation-devsecops-labs-main/''',
+]
